@@ -1,89 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Kane Heath — Playwright, Theatre-maker, Aspiring Creative" />
-    <title>Kane Heath</title>
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: 'Inter', system-ui, sans-serif;
-        background-color: #0b0712;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        overflow: hidden;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kane Heath</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; background-color: #0b0712; }
+    .gradient-text {
+      background: linear-gradient(90deg,#ff5d7b 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+      display: inline-block;
+      cursor: pointer;
+    }
+    .hover-scale:hover { transform: scale(1.04) translateY(-2px); }
+    .hover-scale-small:hover { transform: scale(1.02) translateY(-1px); }
+    .button-hover { transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1); }
+    .button-hover:hover { transform: scale(1.03); }
+  </style>
+</head>
+<body>
+  <div class="relative min-h-screen flex flex-col items-center justify-center text-white overflow-hidden">
+    <!-- Background Glow -->
+    <div class="absolute inset-0 -z-10">
+      <div style="background: radial-gradient(40% 30% at 10% 20%, rgba(255,93,123,0.16), transparent 8%), radial-gradient(30% 25% at 85% 80%, rgba(139,92,246,0.15), transparent 10%), linear-gradient(180deg, rgba(11,7,18,0.6), rgba(11,7,18,0.9)), linear-gradient(135deg, rgba(255,93,123,0.05), rgba(139,92,246,0.05));" class="w-full h-full blur-3xl"></div>
+    </div>
 
-      body::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(40% 30% at 10% 20%, rgba(255,93,123,0.16), transparent 8%),
-                    radial-gradient(30% 25% at 85% 80%, rgba(139,92,246,0.15), transparent 10%),
-                    linear-gradient(180deg, rgba(11,7,18,0.6), rgba(11,7,18,0.9));
-        filter: blur(80px);
-        z-index: -1;
-      }
+    <main class="px-6 py-24 max-w-3xl text-center">
+      <h1 class="text-6xl md:text-8xl font-extrabold leading-tight tracking-tight gradient-text hover-scale">Kane Heath</h1>
+      <p class="mt-6 text-lg md:text-xl text-slate-300 hover-scale-small">Playwright, Theatre-maker, Aspiring Creative.</p>
 
-      h1 {
-        font-size: clamp(3rem, 8vw, 6rem);
-        font-weight: 800;
-        line-height: 1.1;
-        background: linear-gradient(90deg, #ff5d7b 0%, #8b5cf6 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin: 0;
-      }
-
-      p {
-        font-size: clamp(1rem, 2vw, 1.25rem);
-        color: #cbd5e1;
-        margin-top: 1.5rem;
-      }
-
-      a.button {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-top: 2.5rem;
-        padding: 0.75rem 1.5rem;
-        border-radius: 1rem;
-        border: 1px solid #334155;
-        background: rgba(11,7,18,0.4);
-        backdrop-filter: blur(6px);
-        color: #e2e8f0;
-        text-decoration: none;
-        font-size: 1rem;
-        transition: box-shadow 0.3s ease;
-      }
-
-      a.button:hover {
-        box-shadow: 0 6px 30px rgba(139,92,246,0.12);
-      }
-
-      .vignette {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 12rem;
-        background: linear-gradient(to top, rgba(11,7,18,0.9), transparent);
-        pointer-events: none;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>Kane Heath</h1>
-      <p>[Playwright, Theatre-maker, Aspiring Creative.]</p>
-      <a class="button" href="mailto:me@kaneheath.co.uk">Contact Me: me@kaneheath.co.uk</a>
+      <a href="mailto:me@kaneheath.co.uk" class="inline-flex items-center gap-3 rounded-2xl px-6 py-3 border bg-[#0b0712]/40 backdrop-blur-sm hover:shadow-[0_6px_30px_rgba(139,92,246,0.12)] focus:outline-none focus:ring-2 focus:ring-offset-2 button-hover mt-10" style="border-image: linear-gradient(90deg,#ff5d7b 0%, #8b5cf6 100%) 1; border-style: solid; border-width: 2px;">
+        <span class="text-sm md:text-base font-medium">Contact Me:</span>
+        <span class="text-sm md:text-base text-slate-200">me@kaneheath.co.uk</span>
+      </a>
     </main>
-    <div class="vignette"></div>
-  </body>
+
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0b0712]/90 to-transparent"></div>
+  </div>
+</body>
 </html>
